@@ -1,0 +1,108 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+
+\title{\textbf{MATH 307: Individual Homework 8}}
+\author{John Mays}
+\date{03/03/21, Dr. Guo}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem 1}
+
+$||x||_1=\mathlarger{\sum_{i=1}^n|x_i|}$ defines a norm for $x\in\mathbb{C}^ n$, because it satisfies all three properties of a norm.
+\subsection*{Proof:}
+\textbf{1. }Nonnegativity:\\
+
+$\forall x\in\mathbb{C}^n, ||v||\geq 0$ and $||v||=0 \iff v= 0$\\
+
+$|x_i|=\sqrt{(Re(x_i))^2+(Im(x_i))^2} \geq 0$, therefore the sum of all of these values, $\sum_{i=1}^n|x_i|$ must also be $\geq 0$.\\ 
+
+Additionally, since $|x_i|$ cannot be $< 0$, all values in the sum must be zero in order for the sum to be zero.  Therefore both conditions of nonnegativity are proven.\\
+
+\textbf{2. }Scaling:\\
+
+$\forall x \in \mathbb{C}^n, \alpha\in\mathbb{C}, ||\alpha x||=|\alpha|||x||$
+\begin{equation*}
+    \begin{split}
+        ||\alpha x|| &= \mathlarger{\sum_{i=1}^n|\alpha x_i|}\\
+        ||\alpha x|| &= \mathlarger{\sum_{i=1}^n|\alpha||x_i|}\\
+        ||\alpha x|| &= |\alpha|\mathlarger{\sum_{i=1}^n|x_i|}\\
+        ||\alpha x|| &=|\alpha|||x||
+    \end{split}
+\end{equation*}
+\textbf{3. }Triangle Inequality:\\
+
+$\forall x, y \in \mathbb{C}^n, ||x+y||\leq||x||+||y||$
+\begin{equation*}
+    \begin{split}
+        ||x+y||&\leq||x||+||y||\\
+        \mathlarger{\sum_{i=1}^n|x_i+y_i|}&\leq \mathlarger{\sum_{i=1}^n|x_i|} + \mathlarger{\sum_{i=1}^n|y_i|}\\
+        \mathlarger{\sum_{i=1}^n\sqrt{Re(x_i+y_i)^2+Im(x_i+y_i)^2}}&\leq \mathlarger{\sum_{i=1}^n\sqrt{Re(x_i)^2+Im(x_i)^2}} + \mathlarger{\sum_{i=1}^n \sqrt{Re(y_i)^2+Im(y_i)^2}}
+    \end{split}
+\end{equation*}
+
+Since $Re(x_i+y_i)^2\leq Re(x_i)^2+Re(y_i)^2$ (because the values of $Re(x_i)$ and $Re(y_i)$ could be of opposite signs) and $Im(x_i+y_i)^2\leq Im(x_i)^2+Im(y_i)^2$ (because the values of $Im(x_i)$ and $Im(y_i)$ could be of opposite signs), the left hand sum must be $\leq$ to the right hand sum, therefore
+\begin{equation*}
+    \forall x, y \in \mathbb{C}^n, ||x+y||\leq||x||+||y||
+\end{equation*}
+is proven.\\
+
+All conditions are proven, thus $||x||_1=\mathlarger{\sum_{i=1}^n|x_i|}$ defines a norm for $x\in\mathbb{C}^ n$.
+
+ 
+
+\pagebreak
+\section*{Problem 2}
+\centerline{$||x||_\infty\leq||x||_1\leq n||x||_\infty$ for all $x \in \mathbb{C}^n$}
+\subsection*{Proof:}
+\subsubsection*{}
+\textbf{First Inequality: }$||x||_\infty\leq||x||_1$\\
+\begin{equation*}
+    ||x||_\infty=\max|x_i|\leq||x||_1=|x_1|+|x_2|+\dots+|x_n|
+\end{equation*}
+
+For any $x$, $\max|x_i|$ is simply one of the elements of the series that is equal to $||x||_1$.  And since the absolute value of any element will always be $\geq 0$, the inequality can be thought of as:\\
+\begin{equation*}
+\begin{split}
+    \max|x_i|&\leq\max|x_i|+\sum_{x_i\in \{x:x_i\neq\max|x_i|\}}|x_i|\\
+    0 &\leq\sum_{x_i\in \{x:x_i\neq\max|x_i|\}}|x_i|
+\end{split}
+\end{equation*}
+
+The other elements of $x$ could be anything, but indeed the sum of their absolute values excluding the maximum would be less than or equal to zero.\\ Thus the first inequality is proven.
+\subsubsection*{}
+\textbf{Second Inequality: }$||x||_1\leq n||x||_\infty$\\
+%$||x||_1=|x_1|+|x_2|+\dots+|x_n|$ and $n||x||_\infty=n\max|x_i|$.
+
+Using the same expansions from the first inequality, we can rewrite the second inequality as:
+\begin{equation}
+    \sum_{i=1}^n|x_i|\leq n\max|x_i|
+\end{equation}
+Additionally, it must be understood that, by the function of $\max$\{\}:
+\begin{equation}
+   \forall x_i, |x_i|\leq \max|x_i|
+\end{equation}
+Now let's say the element in $x$ that satisfies $\max|x_i|$ is called $x_m,$ where $1\leq m\leq n$.  Thus, using inequality (2), we can say: 
+\begin{equation}
+    \forall x_i, |x_i|\leq|x_m|  
+\end{equation}
+And now, if we rewrite equation (1) using $x_m$, we get
+\begin{equation}
+    \sum_{i=1}^n|x_i|\leq\sum_{i=1}^n|x_m|
+\end{equation}
+\\
+\centerline{(cont. on following page)}
+\pagebreak
+
+Since we know that each sum will have $n$ elements, and all of the elements in the left hand sum must be $\leq$ to all of the elements in the righthand sum, we can conclude that the left hand sum must be less than or equal to the right hand sum by and thus the second inequality is proven.\\
+
+Combining the two proven inequalities, we can now say that the following inequality is proven:\\
+\centerline{$||x||_\infty\leq||x||_1\leq n||x||_\infty$ for all $x \in \mathbb{C}^n$}
+
+\end{document}
