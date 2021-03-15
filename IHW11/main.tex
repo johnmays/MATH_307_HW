@@ -1,0 +1,78 @@
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{\textbf{MATH 307: Individual Homework 11}}
+\author{John Mays}
+\date{03/15/21, Dr. Guo}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem 1}
+The function $f:P^3 \rightarrow \mathbb{R}$, where $f(\alpha_0+\alpha_1x+\alpha_2x^2+\alpha_3x^3) = \alpha_3$, is a linear mapping, because it satisfies both conditions of a linear mapping.
+\subsubsection*{Proof:}
+
+Let $\alpha_0+\alpha_1x+\alpha_2x^2+\alpha_3x^3$ and $\beta_0+\beta_1x+\beta_2x^2+\beta_3x^3$ be vectors in $P^3$, and let $\alpha_0, \alpha_1, \alpha_2, \alpha_3, \beta_0, \beta_1, \beta_2, \beta_3$ and $\lambda$ be scalars in $\mathbb{R}$.\\
+\textbf{1. Scalar Multiplication:}
+\begin{equation*}
+    \begin{split}
+        & f(\lambda(\alpha_0+\alpha_1x+\alpha_2x^2+\alpha_3x^3))\\
+        &= f(\lambda\alpha_0+\lambda\alpha_1x+\lambda\alpha_2x^2+\lambda\alpha_3x^3))\\
+        &= \lambda \alpha_3\\ 
+        &= \lambda f(\alpha_0+\alpha_1x+\alpha_2x^2+\alpha_3x^3)
+    \end{split}
+\end{equation*}
+\textbf{2. Vector Addition:}
+\begin{equation*}
+    \begin{split}
+        & f((\alpha_0+\alpha_1x+\alpha_2x^2+\alpha_3x^3)+(\beta_0+\beta_1x+\beta_2x^2+\beta_3x^3))\\
+        &= f((\alpha_0+\beta_0)+(\alpha_1+\beta_1)x+(\alpha_2+\beta_2)x^2+(\alpha_3+\beta_3)x^3)\\
+        &=\alpha_3+\beta_3\\
+        &=f(\alpha_0+\alpha_1x+\alpha_2x^2+\alpha_3x^3)+f(\beta_0+\beta_1x+\beta_2x^2+\beta_3x^3)
+    \end{split}
+\end{equation*}
+
+\section*{Problem 2}
+\textbf{A: }Symmetric, Hermitian, Diagonal: (Upper-Triangular, Lower-Triangular)\\
+\textbf{B: }Lower-Triangular\\
+\textbf{C: }Upper-Triangular\\
+\textbf{D: }Symmetric\\
+\textbf{E: }Hermitian\\
+\textbf{F: }None
+
+\section*{Problem 3}
+\begin{equation*}
+    (\alpha A + \beta B)^T=\alpha A^T +\beta B^T
+\end{equation*}
+\subsubsection*{LHS:}
+The matrix $\alpha A + \beta B$ has a $ji$-th entry $=\alpha a_{ji} + \beta b_{ji}$.\\  
+By the mechanics of a transpose, the $ij$-th entry of the $(\alpha A + \beta B)^T$ will equal the $ji$-th entry of $(\alpha A + \beta B)$.\\
+In other words, the $ij$-th entry of the LHS
+$=\alpha a_{ji} + \beta b_{ji}.$
+
+\subsubsection*{RHS:}
+The matrix $A$ has a $ji$-th entry $= a_{ji}$\\
+The matrix $ B$ has a $ji$-th entry $= b_{ji}$\\
+By the definition of a transpose, the matrix $A^T$ has a $ij$-th entry $= a_{ji}$\\
+By the definition of a transpose, the matrix $B^T$ has a $ij$-th entry $= b_{ji}$\\
+Then by the scalar multiplication and matrix addition properties, we can say that the $ij$-th entry of $\alpha A^T +\beta B^T$, the RHS $ = \alpha a_{ji}+\beta b_{ji}.$
+
+\subsubsection*{Conclusion:}
+For all legal indices $i,j$, the $ij$-th entry of $\alpha A^T +\beta B^T =$ the $ij$-th entry of $(\alpha A + \beta B)^T$.\\
+Therefore $\alpha A^T +\beta B^T = (\alpha A + \beta B)^T$.
+
+\section*{Problem 4}
+For the sake of notation, let's call $B$ the conjugate transpose of $A, $ s.t. $ B = A^{*}$\\
+Assume the matrix $A$ is Hermitian.\\ 
+$\implies A=B$\\
+$\implies a_{ij}\in A = b_{ij} \in B$\\
+If $a_{ij} \in A$ is on the diagonal, then $i=j$.  Therefore $b_{ji} \in B=b_{ij} \in B$\\
+This implies that the conjugate transpose of any $a_{ij}\in A$ on the diagonal of $A$ is mapped to the same position, $(i,j)$.\\
+Therefore $a_{ij}=b_{ij}=\overline{a_{ij}}.$  This can only be true if $\operatorname{Im}(a_{ij})=0.$\\
+Therefore the diagonal entries of a Hermitian matrix must be real-valued.
+
+\end{document}
