@@ -1,0 +1,92 @@
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{\textbf{MATH 307: Individual Homework 12}}
+\author{John Mays}
+\date{03/22/21, Dr. Guo}
+
+\begin{document}
+
+\maketitle
+%\begin{pmatrix}\end{pmatrix}
+
+\section*{Problem 1}
+$A = \begin{pmatrix}1 & i \\ 1 & -i\end{pmatrix}$\\
+Assume $B$ is a right inverse of $A \implies AB=I=\begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix}. $\\ 
+Then,\\
+$\begin{pmatrix}1 & i\end{pmatrix}b_1=1$\\
+$\begin{pmatrix}1 & i\end{pmatrix}b_2=0$\\
+$\begin{pmatrix}1 & -i\end{pmatrix}b_1=0$\\
+$\begin{pmatrix}1 & -i\end{pmatrix}b_2=1$\\
+Therefore $b_1=\begin{pmatrix}\frac{1}{2}\\ -\frac{1}{2}i\end{pmatrix}$ and $b_2=\begin{pmatrix}\frac{1}{2}\\ \frac{1}{2}i\end{pmatrix}.$  So $B = \begin{pmatrix}\frac{1}{2} & \frac{1}{2}\\ -\frac{1}{2}i & \frac{1}{2}i\end{pmatrix}$.\\
+\linebreak
+To confirm that $B$ is a left inverse of $A,$ $BA$ should be equal to $I.$\\
+\linebreak
+$BA=\begin{pmatrix}\frac{1}{2} & \frac{1}{2}\\ -\frac{1}{2}i & \frac{1}{2}i\end{pmatrix}\begin{pmatrix}1 & i \\ 1 & -i\end{pmatrix}=\begin{pmatrix}(\frac{1}{2})(1)+(\frac{1}{2})(1) & (\frac{1}{2})(i)+(\frac{1}{2})(-i) \\ (-\frac{1}{2})(1)+(\frac{1}{2})(1) & (-\frac{1}{2})(i)+(\frac{1}{2})(-i) \end{pmatrix} = \begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix} = I$\\
+Since $B$ is a left and right inverse of $A$, $B=\begin{pmatrix}\frac{1}{2} & \frac{1}{2}\\ -\frac{1}{2}i & \frac{1}{2}i\end{pmatrix}$ is \textit{the} inverse of $A.$
+\pagebreak
+\section*{Problem 2}
+$A = \begin{pmatrix}\frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2}\\ \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}\end{pmatrix}$ and $\textbf{b} = \begin{pmatrix}0 \\ 2\sqrt{2}\end{pmatrix}$\\
+For notation purposes, $\textbf{x}$ is a two dimensional vector s.t. $\textbf{x}=\begin{pmatrix}x \\ y\end{pmatrix}$.
+\subsubsection*{a.}
+Writing out $A\textbf{x}=\textbf{b}$ yields: $\begin{pmatrix}\frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2}\\ \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}\end{pmatrix}\begin{pmatrix}x \\ y\end{pmatrix}=\begin{pmatrix}0 \\ 2\sqrt{2}\end{pmatrix}$\\
+This yields two equations for each row of the $\textbf{x}$ vector:\\
+$\frac{\sqrt{2}}{2}x -\frac{\sqrt{2}}{2}y=0$\\
+$\frac{\sqrt{2}}{2}x +\frac{\sqrt{2}}{2}y=2\sqrt{2}$\\
+\linebreak
+From the first equation, we can determine that $x=y$.\\
+Plugging into the second, we can ascertain that $\frac{\sqrt{2}}{2}x +\frac{\sqrt{2}}{2}x=2\sqrt{2}\implies\sqrt{2}x=2\sqrt{2}\implies x= 2 \implies y =2$\\
+Therefore $\textbf{x}=\begin{pmatrix}2\\2\end{pmatrix}$
+\subsubsection*{b.}
+Since $\textbf{b}$ is the vector $\textbf{x}$ after having been rotated positive $45^{\circ}$, $\textbf{x}$ can be thought of as $\textbf{b}$ rotated negative $45^{\circ}$.\\
+To calculate $\textbf{x},$ we can first calculate the "reversed" rotation matrix for $\theta = -45^{\circ} = -\frac{\pi}{4}$ as $\begin{pmatrix}\cos{-\frac{\pi}{4}} & -\sin{-\frac{\pi}{4}}\\ \sin{-\frac{\pi}{4}} & \cos{-\frac{\pi}{4}}\ \end{pmatrix} = \begin{pmatrix} \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}\\ -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}
+\end{pmatrix}$\\
+Then calculate the "reversed" rotation matrix times $\textbf{b}$ to yield $\textbf{x}$:\\
+$\begin{pmatrix} \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}\\ -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}
+\end{pmatrix}\begin{pmatrix}0 \\ 2\sqrt{2}\end{pmatrix}=  \begin{pmatrix} (\frac{\sqrt{2}}{2})(0) + (\frac{\sqrt{2}}{2})(2\sqrt{2})\\ -\frac{\sqrt{2}}{2})(0) + (\frac{\sqrt{2}}{2})(2\sqrt{2})
+\end{pmatrix}=\textbf{x}=\begin{pmatrix}2\\2\end{pmatrix}$
+\pagebreak
+\subsubsection*{c.}
+To prove that $A$ is an orthogonal matrix, we must prove that $AA^{T}=I=A^{T}A$.\\
+The first necessary calculation is to find $A^{T}.$  $A^{T}=\begin{pmatrix}\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}\\ -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}\end{pmatrix}$.\\
+Then we calculate the LHS and RHS:\\
+\linebreak
+\textbf{LHS:}\\
+$AA^{T}=\begin{pmatrix}\frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2}\\ \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}\end{pmatrix}\begin{pmatrix}\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}\\ -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}\end{pmatrix}=
+\begin{pmatrix}
+(\frac{\sqrt{2}}{2})(\frac{\sqrt{2}}{2})+(-\frac{\sqrt{2}}{2})(-\frac{\sqrt{2}}{2}) & 
+(\frac{\sqrt{2}}{2})(\frac{\sqrt{2}}{2}) + (-\frac{\sqrt{2}}{2})(\frac{\sqrt{2}}{2}) \\
+(\frac{\sqrt{2}}{2})(\frac{\sqrt{2}}{2})+(\frac{\sqrt{2}}{2})(-\frac{\sqrt{2}}{2}) & 
+(\frac{\sqrt{2}}{2})(\frac{\sqrt{2}}{2}) + (\frac{\sqrt{2}}{2})(\frac{\sqrt{2}}{2})
+\end{pmatrix} 
+=\begin{pmatrix}\frac{1}{2}+\frac{1}{2} & \frac{1}{2}-\frac{1}{2} \\ \frac{1}{2}-\frac{1}{2} & \frac{1}{2}+\frac{1}{2}\end{pmatrix}=\begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix}$\\
+\linebreak
+\textbf{RHS:}\\
+$A^{T}A=\begin{pmatrix}\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}\\ -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}\end{pmatrix}\begin{pmatrix}\frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2}\\ \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}\end{pmatrix}=
+\begin{pmatrix}
+(\frac{\sqrt{2}}{2})(\frac{\sqrt{2}}{2})+(\frac{\sqrt{2}}{2})(\frac{\sqrt{2}}{2}) & 
+(\frac{\sqrt{2}}{2})(-\frac{\sqrt{2}}{2}) + (\frac{\sqrt{2}}{2})(\frac{\sqrt{2}}{2}) \\
+(-\frac{\sqrt{2}}{2})(\frac{\sqrt{2}}{2})+(\frac{\sqrt{2}}{2})(-\frac{\sqrt{2}}{2}) & 
+(-\frac{\sqrt{2}}{2})(\frac{\sqrt{2}}{2}) + (\frac{\sqrt{2}}{2})(\frac{\sqrt{2}}{2})
+\end{pmatrix} 
+=\begin{pmatrix}\frac{1}{2}+\frac{1}{2} & -\frac{1}{2}+\frac{1}{2} \\ -\frac{1}{2}+\frac{1}{2} & \frac{1}{2}+\frac{1}{2}\end{pmatrix}=\begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix}$\\
+\linebreak
+Therefore $A$ is an orthogonal matrix.\\  
+And since it is orthogonal, $A^{-1}=A^{T}=\begin{pmatrix}\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}\\ -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}\end{pmatrix}$.\\
+\begin{equation*}
+    \begin{split}
+    A\textbf{x} &= \textbf{b}\\
+    A^{-1}A\textbf{x} &= A^{-1}\textbf{b}\\
+    I\textbf{x} &= A^{-1}\textbf{b}\\
+    \textbf{x} &= A^{-1}\textbf{b}\\
+    \textbf{x} &= \begin{pmatrix}\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}\\ -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}\end{pmatrix}\begin{pmatrix}0 \\ 2\sqrt{2}\end{pmatrix}\\
+    \textbf{x} &=\begin{pmatrix} (\frac{\sqrt{2}}{2})(0) + (\frac{\sqrt{2}}{2})(2\sqrt{2})\\ -\frac{\sqrt{2}}{2})(0) + (\frac{\sqrt{2}}{2})(2\sqrt{2})
+\end{pmatrix}\\
+    \textbf{x} &=\begin{pmatrix}2\\2\end{pmatrix}
+    \end{split}
+\end{equation*}
+ 
+\end{document}
