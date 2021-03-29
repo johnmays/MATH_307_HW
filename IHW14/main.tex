@@ -1,0 +1,57 @@
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{\textbf{MATH 307: Individual Homework 14}}
+\author{John Mays}
+\date{03/29/21, Dr. Guo}
+
+\begin{document}
+%\begin{pmatrix}\end{pmatrix}
+\maketitle
+
+\section*{Problem 1}
+$A\in F^{m\times n},$ where $F=\mathbb{R}$ or $\mathbb{C}$\\
+Range$(A)=\{Ax|x\in F^{n}\}$\\
+Null$(A^{*})=\{x\in F^m|A^{*}x=0\}$\\
+\subsubsection*{Proof:}
+Suppose there are two arbitrary vectors, $x\in$ Range$(A)$ s.t. $x=Az$\\ and $y\in$ Null$(A^{*})$ s.t. $A^{*}y=0$.\\
+\linebreak
+Assume $x$ and $y$ are orthogonal.  $\implies \langle x, y \rangle = 0$
+\begin{equation*}
+    \begin{split}
+        \langle x,y \rangle &= \\
+        y^{*}x &= \\
+        y^{*}Az &= \\
+        (y^{*}A)^{*}z &= \\
+        (A^{*}y)z &= \\
+        (0)z &= 0
+    \end{split}
+\end{equation*}
+Since $\langle x,y \rangle = 0$, any two arbitrary vectors, $x\in$ Range$(A)$ and $y\in$ Null$(A^{*})$, are orthogonal.
+\pagebreak
+\section*{Problem 2}
+$A=\begin{pmatrix}1&2&1\\3&-1&1\\1&1&2\end{pmatrix}$, $A=QR$.\\
+\subsubsection*{Gram-Schmidt:}
+\begin{equation*}
+    \begin{split}
+    e_1&=\frac{a_1}{||a_1||}=\frac{1}{\sqrt{1^2+3^2+1^2}}\begin{pmatrix}1\\3\\1\end{pmatrix}=\begin{pmatrix}\frac{1}{\sqrt{11}}\\\frac{3}{\sqrt{11}}\\\frac{1}{\sqrt{11}}\end{pmatrix}\\
+    s_2&= a_2 - \langle a_2,e_1\rangle e_1\\
+    &= \begin{pmatrix}2\\-1\\1\end{pmatrix} - (\frac{2}{\sqrt{11}}-\frac{3}{\sqrt{11}}+\frac{1}{\sqrt{11}})\begin{pmatrix}\frac{1}{\sqrt{11}}\\\frac{3}{\sqrt{11}}\\\frac{1}{\sqrt{11}}\end{pmatrix}=\begin{pmatrix}2\\-1\\1\end{pmatrix}\\
+    e_2&=\frac{s_2}{||s_2||}=\frac{1}{\sqrt{2^2+(-1)^2+1^2}}\begin{pmatrix}2\\-1\\1\end{pmatrix}=\begin{pmatrix}\frac{2}{\sqrt{6}}\\-\frac{1}{\sqrt{6}}\\\frac{1}{\sqrt{6}}\end{pmatrix}\\
+    s_3&=a_3 - \langle a_3,e_1\rangle e_1 - \langle a_3,e_2\rangle e_2\\
+    s_3&= \begin{pmatrix}1\\1\\2\end{pmatrix} - (\frac{1}{\sqrt{11}}+\frac{3}{\sqrt{11}}+\frac{2}{\sqrt{11}})\begin{pmatrix}\frac{1}{\sqrt{11}}\\\frac{3}{\sqrt{11}}\\\frac{1}{\sqrt{11}}\end{pmatrix}-(\frac{2}{\sqrt{6}}-\frac{1}{\sqrt{6}}+\frac{2}{\sqrt{6}})\begin{pmatrix}\frac{2}{\sqrt{6}}\\-\frac{1}{\sqrt{6}}\\\frac{1}{\sqrt{6}}\end{pmatrix}\\
+    &= \begin{pmatrix}1\\1\\2\end{pmatrix} - (\frac{6}{\sqrt{11}})\begin{pmatrix}\frac{1}{\sqrt{11}}\\\frac{3}{\sqrt{11}}\\\frac{1}{\sqrt{11}}\end{pmatrix}-(\frac{3}{\sqrt{6}})\begin{pmatrix}\frac{2}{\sqrt{6}}\\-\frac{1}{\sqrt{6}}\\\frac{1}{\sqrt{6}}\end{pmatrix}=\begin{pmatrix}1\\1\\2\end{pmatrix}-\begin{pmatrix}\frac{6}{11}\\\frac{18}{11}\\\frac{6}{11}\end{pmatrix}-\begin{pmatrix}\frac{6}{6}\\-\frac{3}{6}\\\frac{3}{6}\end{pmatrix}\\
+    &= \begin{pmatrix}1-\frac{6}{11}-1\\1-\frac{18}{11}+\frac{1}{2}\\2-\frac{6}{11}-\frac{1}{2}\end{pmatrix}=\begin{pmatrix}-\frac{6}{11}\\-\frac{3}{22}\\\frac{21}{22}\end{pmatrix}\\
+    e_3&=\frac{s_3}{||s_3||}=\frac{\sqrt{22}}{\sqrt{27}}\begin{pmatrix}-\frac{6}{11}\\-\frac{3}{22}\\\frac{21}{22}\end{pmatrix}=\begin{pmatrix}-\frac{2\sqrt{2}}{\sqrt{33}}\\-\frac{1}{\sqrt{66}}\\\frac{7}{\sqrt{66}}\end{pmatrix}
+    \end{split}
+\end{equation*}
+Now, $Q=\begin{pmatrix}e_1&e_2&e_3\end{pmatrix}=\begin{pmatrix}\frac{1}{\sqrt{11}} & \frac{2}{\sqrt{6}} & -\frac{2\sqrt{2}}{\sqrt{33}}\\ \frac{3}{\sqrt{11}} & -\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{66}}\\ \frac{1}{\sqrt{11}} & \frac{1}{\sqrt{6}} & \frac{7}{\sqrt{66}}\end{pmatrix}$\\
+And $R=\begin{pmatrix}a_1 \cdot e_1 & a_2 \cdot e_1 & a_3 \cdot e_1 \\ 0 & a_2 \cdot e_2 & a_3 \cdot e_2 \\ 0 & 0 & a_3 \cdot e_3\end{pmatrix}=\begin{pmatrix} \sqrt{11} & 0 & \frac{6}{\sqrt{11}}\\0 & \sqrt{6} & \frac{3}{\sqrt{6}}\\0&0&3\frac{3}{22}\end{pmatrix}$
+\pagebreak
+\section*{Problem 3}
+Since it is a reduced $QR$-decomposition, $Q$ will have dimension $m\times n$ and $R$ will have dimension $n \times n$.\\ 
+$Q$ can be equal to a normalized version of $A$ where the columns are normalized as $\frac{a_i}{||a_i||}$ in order to be unitary.  And $R$ can be equal to a modified version of $I$, where the columns are defined as $||a_i||i_i$ (which qualifies as an upper-triangular matrix).
+\end{document}
