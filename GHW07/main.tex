@@ -1,0 +1,40 @@
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+
+\title{\textbf{MATH 307: Group Homework 7}}
+\author{John Mays, Zhitao Chen, Henry Zhong, Huajin Xin}
+\date{04/02/21, Dr. Guo}
+
+\begin{document}
+%\begin{pmatrix}\end{pmatrix}
+
+\maketitle
+
+\section*{Problem 1}
+For all matrices, $A^{m\times n}$, in which all of the row sums $=1$, the vector $v=\begin{pmatrix}1\\1\\ \vdots\\1\end{pmatrix}$ of dimension $n$ is an eigenvector.
+\subsection*{Proof: }
+\begin{equation*}
+    \begin{split}
+        Av&=\lambda v\\
+        \begin{pmatrix}a^*_1\\a^*_2\\ \vdots \\a^*_m\end{pmatrix}\begin{pmatrix}1\\1\\ \vdots\\1\end{pmatrix}&=\lambda \begin{pmatrix}1\\1\\ \vdots\\1\end{pmatrix}\\
+    \end{split}
+\end{equation*}
+All of the rows in $A$ are equal to 1.
+\begin{equation*}
+    \begin{split}
+        \begin{pmatrix}1\\1\\ \vdots\\1\end{pmatrix}\begin{pmatrix}1\\1\\ \vdots\\1\end{pmatrix}&=\lambda \begin{pmatrix}1\\1\\ \vdots\\1\end{pmatrix}\\
+        \begin{pmatrix}1\\1\\ \vdots\\1\end{pmatrix}&=\lambda \begin{pmatrix}1\\1\\ \vdots\\1\end{pmatrix}\\
+        \begin{pmatrix}1\\1\\ \vdots\\1\end{pmatrix}&=1 \begin{pmatrix}1\\1\\ \vdots\\1\end{pmatrix}\\
+    \end{split}
+\end{equation*}
+Since there exists $\lambda$ s.t. $Av=\lambda v$, $v$ is an eigenvector with corresponding eigenvalue 1.
+\section*{Problem 2}
+\dots %Henry, Zhitao
+\section*{Problem 3}
+\dots %Huaijin
+
+\end{document}
