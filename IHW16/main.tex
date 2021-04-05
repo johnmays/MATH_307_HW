@@ -1,0 +1,111 @@
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+
+\title{\textbf{MATH 307: Individual Homework 16}}
+\author{John Mays}
+\date{04/05/21, Dr. Guo}
+
+\begin{document}
+
+\maketitle
+
+% \begin{pmatrix}\end{pmatrix}
+
+\section*{Problem 1}
+$A=\begin{pmatrix}-2&-2\\-1&-3\end{pmatrix}$
+\subsubsection*{Eigenvalues: }
+\begin{equation*}
+    \begin{split}
+    &\det (A-\lambda I) = \det \begin{pmatrix}-2-\lambda&-2\\-1&-3-\lambda\end{pmatrix}= 0\\
+    &(-2-\lambda)(-3-\lambda)-(-2)(-1) = 6+5\lambda+\lambda^2-2=0\\
+    &\lambda^2+5\lambda+4=0\\
+    &\lambda_1 = -1,\\
+    &\lambda_2 = -4
+    \end{split}
+\end{equation*}
+\subsubsection*{Eigenvectors: }
+\begin{equation*}
+    \begin{split}
+    &Av_1=\lambda_1 v_1\\
+    &\begin{pmatrix}-2&-2\\-1&-3\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}=\lambda_1\begin{pmatrix}x\\y\end{pmatrix}\\
+    &\begin{pmatrix}-2x-2y\\-1x-3y\end{pmatrix}=\begin{pmatrix}-x\\-y\end{pmatrix} \implies x= -2y\\
+    &v_1=\begin{pmatrix}-2\\1\end{pmatrix}
+    \end{split}
+\end{equation*}
+\begin{equation*}
+    \begin{split}
+    &Av_2=\lambda_2 v_2\\
+    &\begin{pmatrix}-2&-2\\-1&-3\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}=\lambda_2\begin{pmatrix}x\\y\end{pmatrix}\\
+    &\begin{pmatrix}-2x-2y\\-1x-3y\end{pmatrix}=\begin{pmatrix}-4x\\-4y\end{pmatrix} \implies x=y\\
+    &v_2=\begin{pmatrix}1\\1\end{pmatrix}
+    \end{split}
+\end{equation*}
+\pagebreak
+
+\section*{Problem 2}
+\subsubsection*{Finding Eigenpair for $A^{-1}$:}
+\begin{equation*}
+    \begin{split}
+        Av&=\lambda v\\
+        A^{-1}A v &= \lambda A^{-1} v\\
+        v &= \lambda A^{-1}v\\
+        \frac{1}{\lambda}v&=A^{-1}v\\
+        \lambda^{-1}v&=A^{-1}v \implies \text{the eigenpair for }A^{-1}\text{ is }( \lambda^{-1},v).
+    \end{split}
+\end{equation*}
+\subsubsection*{Finding Eigenpair for $(A^{-1})^{3}$:}
+(Proof by induction)\\
+\linebreak
+We know that $A^{-1}v =  \lambda^{-1}v$ is true.\\
+Or, put another way, $(A^{-1})^{k}v =  (\lambda^{-1})^{k}v$ for $k=1$.\\
+\linebreak
+Assume this statement, $(A^{-1})^{k-1}v =  (\lambda^{-1})^{k-1}v$, is true for $k>1$.\\
+\begin{equation*}
+    \begin{split}
+        (A^{-1})^{k}v &= (A^{-1})((A^{-1})^{k-1})v\\
+        &= (A^{-1})((\lambda^{-1})^{k-1})v\\
+        &= ((\lambda^{-1})^{k-1})(A^{-1})v\\
+        &= ((\lambda^{-1})^{k-1})(\lambda^{-1})v\\
+        (A^{-1})^{k}v &= (\lambda^{-1})^{k}v \text{ for all $k\geq 1$.}\\
+    \end{split}
+\end{equation*}
+In our case, $k=3$, so a corresponding eigenvalue for $(A^{-1})^3$ is $(\lambda^{-1})^3=\lambda^{-3}$.\\
+\linebreak
+Thus, a corresponding eigenpair for $(A^{-1})^3$ is $(\lambda^{-3}, v)$.
+\pagebreak
+\section*{Problem 3}
+We know that $Pv =  \lambda v, v\neq 0$ and $P^2=P$.
+\subsubsection*{Proof (by induction):}
+We know that $P^{k}v =  \lambda^{k} v$ for $k=1$.\\
+\linebreak
+Assume this statement, $P^{k-1}v =  P^{k-1}v$, is true for $k>1$.
+\begin{equation*}
+    \begin{split}
+        P^{k}v &= PP^{k-1}v\\
+        &= P\lambda^{k-1}v\\
+        &= \lambda^{k-1}Pv\\
+        &= \lambda^{k-1}\lambda v\\
+        P^{k}v &= \lambda^{k}v \text{ for all $k\geq 1$.}\\
+    \end{split}
+\end{equation*}
+Now we know $P^2v = \lambda^2 v$ (for $k=2$).\\
+$Pv=P^2v=\lambda^2 v = \lambda v \implies \lambda^2=\lambda$, which only has two solutions: $0, 1$.\\
+Therefore the eigenvalues for a projector may only be $0$ or $1$.
+
+\section*{Problem 4}
+\begin{equation*}
+    \begin{split}
+        A^{*}Av&=\lambda v\\
+        v^{*}A^{*}Av&=v^{*}\lambda v\\
+        A^{*}v^{*}Av&=\lambda v^{*} v\\
+        (Av)^{*}(Av)&=\lambda v^{*} v\\
+        \langle Av, Av \rangle&=\lambda \langle v, v \rangle\\
+        (|| Av ||_2)^2&=\lambda (|| v ||_2)^2\\
+        \lambda &= \frac{(|| Av ||_2)^2}{(|| v ||_2)^2}=(||A||_2)^2 \geq 0 \text{, by nonnegativity of matrix norms.}
+    \end{split}
+\end{equation*}
+\end{document}
