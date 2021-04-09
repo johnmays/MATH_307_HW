@@ -1,0 +1,42 @@
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+
+\title{\textbf{MATH 307: Group Homework 8}}
+\author{Henry Zhong, Zhitao Chen, John Mays, Huaijin Xin}
+\date{04/09/21, Dr. Guo}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem 1}
+\dots
+\section*{Problem 2}
+\dots
+\section*{Problem 3}
+$A\in F^{n \times n} = U\Sigma V^{*}$ where $U, V$ are unitary and $\Sigma$ is diagonal.\\
+\begin{equation*}
+    \begin{split}
+        A^{*}A& =(U \Sigma V^{*})^{*}(U \Sigma V^{*})\\
+        &=(V \Sigma^{*} U^{*})(U \Sigma V^{*})\\
+        &= V \Sigma^{*} U^{*}U \Sigma V^{*}\\
+        &= V \Sigma^{*} I \Sigma V^{*}\\
+        &= V \Sigma^{*} \Sigma V^{*}\\ 
+        &= V (\Sigma^{*} \Sigma) V^{*}
+    \end{split}
+\end{equation*}
+Since $V$ is a unitary matrix, it is also invertible, and $V^{*}=V^{-1}$. Therefore,\\
+\begin{equation*}
+    V (\Sigma^{*} \Sigma) V^{*} = V (\Sigma^{*} \Sigma) V^{-1}
+\end{equation*}
+Furthermore, the resultant matrix of $\Sigma^{*}\Sigma$ will also be a diagonal matrix $=\text{diag}(|\sigma_1|^2,|\sigma_2|^2,\dots, |\sigma_n|^2)$\\
+\linebreak
+Since $V$ is invertible, $V^{*} = V^{-1}$, and $\Sigma^{*}\Sigma$ is a diagonal matrix, $V (\Sigma^{*}\Sigma) V^{*}$ is an eigendecomposition of $A^{*}A$.
+\section*{Problem 4}
+\dots
+
+\end{document}
