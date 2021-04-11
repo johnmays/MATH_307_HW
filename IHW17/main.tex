@@ -40,8 +40,22 @@ And the new singular matrix, $(\Sigma^{*} \Sigma)$, will look like this:
 \begin{equation*}
     (\Sigma^{*} \Sigma) = \begin{bmatrix}\sigma_1 & & & \dots & 0\\ & \ddots & & \dots & 0 \\ & & \sigma_n & \dots & 0\end{bmatrix}^{n \times m} \begin{bmatrix}\sigma_1 \\ & \ddots \\ & & \sigma_n \\ \vdots & \vdots & \vdots \\ 0 & 0 & 0 \end{bmatrix}^{m \times n} = \begin{bmatrix}|\sigma_1|^2 \\ & \ddots \\ & & |\sigma_n|^2 \end{bmatrix}^{n \times n}
 \end{equation*}
-The last diagonal entry will be equal to $|\sigma_n|^2$, a positive value, $A^{*}A$ is invertible.
+The last diagonal entry is equal to $|\sigma_n|^2$, which, due to the fact that all $\sigma_{i} > 0$, must be a positive value.  Therefore $A^{*}A$ is invertible.
 \subsection*{Outer Product Case:}
-\dots
+\begin{equation*}
+    \begin{split}
+        AA^{*} &=  (U \Sigma V^{*}) (U \Sigma V^{*})^{*}\\
+        &=  U \Sigma V^{*} (V^{*})^{*} \Sigma^{*} U^{*}\\
+        &= U \Sigma V^{*} V \Sigma^{*} U^{*} \\
+        &= U \Sigma ( V^{*} V ) \Sigma^{*} U^{*} \\
+        &= U \Sigma I \Sigma^{*} U^{*} \\
+        AA^{*} &= U \Sigma \Sigma^{*} U^{*}\\
+    \end{split}
+\end{equation*}
+And the new singular matrix, $(\Sigma \Sigma^{*})$, will look like this: 
+\begin{equation*}
+    (\Sigma \Sigma^{*}) = \begin{bmatrix}\sigma_1 \\ & \ddots \\ & & \sigma_n \\ \vdots & \vdots & \vdots \\ 0 & 0 & 0 \end{bmatrix}^{m \times n} \begin{bmatrix}\sigma_1 & & & \dots & 0\\ & \ddots & & \dots & 0 \\ & & \sigma_n & \dots & 0\end{bmatrix}^{n \times m}  = \begin{bmatrix}\sigma_1 & & & \dots & 0\\ & \ddots & & \dots & 0\\ & & \sigma_n & \dots & 0\\ \vdots & \vdots & \vdots & \ddots & 0 \\ 0 & 0 & 0 & 0 & 0\end{bmatrix}^{m \times m}
+\end{equation*}
+The last diagonal entry is equal to $0$, which is not a positive value, therefore $AA^{*}$ is not invertible.
 
 \end{document}
