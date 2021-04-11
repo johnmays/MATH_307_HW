@@ -1,0 +1,47 @@
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+
+\title{\textbf{MATH 307: Individual Homework 17}}
+\author{John Mays}
+\date{04/11/21, Dr. Guo}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem 1}
+Because $U$ and $V$ are orthogonal, $U^{*} = U^{-1}$ and $V^{*} = V^{-1}$.  Therefore,
+\begin{equation*}
+    \begin{split}
+        A^{-1} &= (U\Sigma V^{*})^{-1}\\
+         &= (V^{*})^{-1} \Sigma ^{-1} U^{-1}\\
+         &= (V^{-1})^{-1} \Sigma ^{-1} U^{-1}\\
+        A^{-1} &= V \Sigma ^{-1} U^{*}
+    \end{split}
+\end{equation*}
+\pagebreak
+\section*{Problem 2}
+\subsection*{Inner Product Case:}
+\begin{equation*}
+    \begin{split}
+        A^{*}A &= (U \Sigma V^{*})^{*} (U \Sigma V^{*})\\
+        &= (V^{*})^{*} \Sigma^{*} U^{*} U \Sigma V^{*}\\
+        &= V \Sigma^{*} U^{*} U \Sigma V^{*}\\
+        &= V \Sigma^{*} (U^{*} U) \Sigma V^{*}\\
+        &= V \Sigma^{*} I \Sigma V^{*}\\
+        A^{*}A &= V \Sigma^{*} \Sigma V^{*}\\
+    \end{split}
+\end{equation*}
+And the new singular matrix, $(\Sigma^{*} \Sigma)$, will look like this: 
+\begin{equation*}
+    (\Sigma^{*} \Sigma) = \begin{bmatrix}\sigma_1 & & & \dots & 0\\ & \ddots & & \dots & 0 \\ & & \sigma_n & \dots & 0\end{bmatrix}^{n \times m} \begin{bmatrix}\sigma_1 \\ & \ddots \\ & & \sigma_n \\ \vdots & \vdots & \vdots \\ 0 & 0 & 0 \end{bmatrix}^{m \times n} = \begin{bmatrix}|\sigma_1|^2 \\ & \ddots \\ & & |\sigma_n|^2 \end{bmatrix}^{n \times n}
+\end{equation*}
+The last diagonal entry will be equal to $|\sigma_n|^2$, a positive value, $A^{*}A$ is invertible.
+\subsection*{Outer Product Case:}
+\dots
+
+\end{document}
