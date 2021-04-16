@@ -1,0 +1,43 @@
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+
+\title{\textbf{MATH 307: Group Homework 9}}
+\author{John Mays}
+\date{04/16/21, Dr. Guo}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem 1}
+\dots
+\section*{Problem 2}
+\dots
+\section*{Problem 3}
+$A \in \mathbb{C}^{m \times n}$
+\subsubsection*{SVD:}
+    $A = U \Sigma V^{*}$ and $A^{*} = V \Sigma^{*} U^{*}$, where \\
+    $\text{range}(A) = \text{span}(u_1, u_2, \dots, u_r) \subset \mathbb{C}^{m}$ and \\
+    $\text{null}(A^{*}) = \text{span}(u_{r+1}, u_{r+2}, \dots, u_{m}) \subset \mathbb{C}^{m}$\\
+\linebreak
+Therefore,
+\begin{equation*}
+    \begin{split}
+        \text{range}(A) + \text{null}(A^{*}) &= \text{span}(u_1, u_2, \dots, u_r) + \text{span}(u_{r+1}, u_{r+2}, \dots, u_{m})\\ 
+        \text{range}(A) + \text{null}(A^{*}) &= \text{span}(u_{1}, u_{2}, \dots, u_{m})\\
+        \text{range}(A) + \text{null}(A^{*}) &= \mathbb{C}^{m}\\
+    \end{split}
+\end{equation*}
+And by the properties of SVD, we know that $U$ is an orthogonal matrix, therefore all the columns of $U$, $u_i$, are mutually orthogonal $\implies$ that the two collections of $u_i$, $\text{range}(A)$ and $\text{null}(A^{*})$, are orthogonal subspaces of $\mathbb{C}^{m}$.\\
+\linebreak
+Therefore $\text{range}(A) \oplus \text{null}(A^{*}) = \mathbb{C}^{m}$
+%\begin{equation*}
+%    \begin{split}
+%
+%    \end{split}
+%\end{equation*}
+\end{document}
