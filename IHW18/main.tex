@@ -1,0 +1,62 @@
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+
+\title{\textbf{MATH 307: Individual Homework 18}}
+\author{John Mays}
+\date{04/14/21, Dr. Guo}
+
+\begin{document}
+
+\maketitle
+%\begin{bmatrix}\end{bmatrix}
+
+\section*{Problem 1}
+\subsection*{Bases:}
+\begin{equation*}
+    \begin{split}
+        A &= U\Sigma V^{*} \\
+        A^{*} &= (U\Sigma V^{*})^{*} = V \Sigma^{*} U^{*} \\
+    \end{split}
+\end{equation*}
+\begin{equation*}
+    \begin{split}
+        \text{range}(A) &= \{Ax | x \in \mathbb{F}^{n}\} = \text{span}(u_1,u_2, \dots, u_r)\\
+        \text{range}(A^{*}) &=  \{A^{*}y | y \in \mathbb{F}^{m}\} = \text{span}(v_1,v_2, \dots, v_r)\\
+    \end{split}
+\end{equation*}
+\subsection*{Proof that row rank = column rank:}
+% Take $A^{m\times n}$, and say $A$ has column rank $r$, therefore a basis of $A$ could be described as $\{u_1,u_2,\dots, u_r\}$.  Take the matrix formed from these vectors as $\hat{U}$ of dimension $m \times r$.
+Any $Ax = \mathlarger{\sum_{j=1}^{r}(\sigma_j v_j^{*} x)u_j} \in $ range$(A)$ according to its SVD.\\
+and any $A^{*}y = \mathlarger{\sum_{i=1}^{r}(\sigma_i^{*} u_i^{*} y)v_i} \in $ range$(A^{*})$ according to its SVD.\\
+\linebreak
+Both sets of linearly independent vectors must have $r$ members.\\
+Thus, for any $A$, the column space and row space both have dimension $r$, so their ranks are equal.
+\pagebreak
+\section*{Problem 2}
+\subsection*{a)}
+The column (and therefore row) rank of $A$ is five, because it has five nonzero singular values.\\
+The set $\{v_1,v_2, \dots ,v_r\}$ is an orthonormal basis of range$(A^{*})$
+\subsubsection*{Proof: }
+\begin{equation*}
+    \begin{split}
+        A^{*} &= (U\Sigma V^{*})^{*} = V \Sigma^{*} U^{*}\\
+    \end{split}
+\end{equation*}
+\subsection*{b)}
+The nullity of $A^{*} = m - r = 1$ (by rank-nullity theorem).\\
+Furthermore, a basis for null$(A^{*})$ = $\{u_{r+1}, u_{r+2}, \dots u_n\}$
+\subsubsection*{Proof: }
+\begin{equation*}
+    \begin{split}
+        A^{*} &= V \Sigma^{*} U^{*}\\
+        A^{*}U &= V \Sigma^{*}\\
+        A^{*}y &= \mathlarger{\sum_{i=1}^{r}(\sigma_{i} u^{*}_i y )v_i}\\
+    \end{split}
+\end{equation*}
+And a vector $y$ can only be in the null space if $A^{*}y = \mathlarger{\sum_{i=1}^{r}(\sigma_{i} u^{*}_i y )v_i} = 0$, which would be only those values with $\sigma_i=0$, A.K.A: $\{u_{r+1}, u_{r+2}, \dots u_n\}$.
+
+\end{document}
