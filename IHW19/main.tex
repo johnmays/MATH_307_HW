@@ -1,0 +1,70 @@
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+
+\title{\textbf{MATH 307: Individual Homework 19}}
+\author{John Mays}
+\date{04/20/21, Dr. Guo}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem 1}
+%\subsection*{Operations: }
+%\begin{itemize}
+%    \item Multiply row 2 by (-3).
+%    \item Interchange rows 1 and 4 of the new matrix.
+%    \item Add 2 times row 2 to row 3 of the new matrix.
+%\end{itemize}
+\subsection*{Finding E with elementary row operations:}
+\begin{equation*}
+    EA^{4 \times 4} = B^{4 \times 4}
+\end{equation*}
+\subsubsection*{Multiply row 2 by (-3):}
+\begin{equation*}
+    \begin{bmatrix}1&0&0&0\\0&-3&0&0\\0&0&1&0\\0&0&0&1\end{bmatrix}\begin{bmatrix}a^{*}_1\\a^{*}_2\\a^{*}_3\\a^{*}_4\end{bmatrix} = \begin{bmatrix}a^{*}_1\\-3a^{*}_2\\a^{*}_3\\a^{*}_4\end{bmatrix} = A^{(1)}
+\end{equation*}
+\subsubsection*{Interchange rows 1 and 4 of the new matrix:}
+\begin{equation*}
+    \begin{bmatrix}0&0&0&1\\0&1&0&0\\0&0&1&0\\1&0&0&0\end{bmatrix}\begin{bmatrix}a^{(1)*}_1\\a^{(1)*}_2\\a^{(1)*}_3\\a^{(1)*}_4\end{bmatrix} = \begin{bmatrix}a^{(1)*}_4\\a^{(1)*}_2\\a^{(1)*}_3\\a^{(1)*}_1\end{bmatrix} = A^{(2)}
+\end{equation*}
+\subsubsection*{Add 2 times row 2 to row 3 of the new matrix:}
+\begin{equation*}
+    \begin{bmatrix}1&0&0&0\\0&1&0&0\\0&2&1&0\\0&0&0&1\end{bmatrix}\begin{bmatrix}a^{(2)*}_1\\a^{(2)*}_2\\a^{(2)*}_3\\a^{(2)*}_4\end{bmatrix} = \begin{bmatrix}a^{(2)*}_1\\a^{(2)*}_2\\2a^{(2)*}_2+a^{(2)*}_3\\a^{(2)*}_4\end{bmatrix} = B
+\end{equation*}
+\subsubsection*{Substituting and Combining:}
+\begin{equation*}
+\begin{split}
+    \begin{bmatrix}1&0&0&0\\0&1&0&0\\0&2&1&0\\0&0&0&1\end{bmatrix}\begin{bmatrix}0&0&0&1\\0&1&0&0\\0&0&1&0\\1&0&0&0\end{bmatrix}\begin{bmatrix}1&0&0&0\\0&-3&0&0\\0&0&1&0\\0&0&0&1\end{bmatrix}\begin{bmatrix}a^{*}_1\\a^{*}_2\\a^{*}_3\\a^{*}_4\end{bmatrix} &= B \implies \\
+    \begin{bmatrix}1&0&0&0\\0&1&0&0\\0&2&1&0\\0&0&0&1\end{bmatrix}\begin{bmatrix}0&0&0&1\\0&1&0&0\\0&0&1&0\\1&0&0&0\end{bmatrix}\begin{bmatrix}1&0&0&0\\0&-3&0&0\\0&0&1&0\\0&0&0&1\end{bmatrix} &= E\\
+    \begin{bmatrix}0&0&0&1\\0&1&0&0\\0&2&1&0\\1&0&0&0\end{bmatrix}\begin{bmatrix}1&0&0&0\\0&-3&0&0\\0&0&1&0\\0&0&0&1\end{bmatrix} &= E\\
+    \begin{bmatrix}0&0&0&1\\0&-3&0&0\\0&-6&1&0\\1&0&0&0\end{bmatrix} &= E\\
+\end{split}
+\end{equation*}
+
+\subsection*{Finding the inverse of E:}
+\begin{equation*}
+    \begin{split}
+        EE^{-1} &= I\\
+        \begin{bmatrix}e^{*}_1 &= \{0,0,0,1\}\\e^{*}_2 &= \{0,-3,0,0\}\\e^{*}_3 &= \{0, -6, 1, 0\}\\e^{*}_4 &= \{1,0,0,0\}\end{bmatrix} \begin{bmatrix}e^{-1}_1 & e^{-1}_2 & e^{-1}_3 & e^{-1}_4 \end{bmatrix} &= \begin{bmatrix}1&0&0&0\\0&1&0&0\\0&0&1&0\\0&0&0&1\end{bmatrix}
+    \end{split}
+\end{equation*}
+Just from inspecting the products that $= 1$ in the identity matrix, it can be determined that $E^{-1}$ must be something like
+$\begin{bmatrix}0&e&e&1\\e&-\frac{1}{3}&e&e\\e&e&e&e\\1&e&e&0\end{bmatrix}$ where the $e$'s are yet-to-be determined values.
+\begin{equation*}
+    \begin{split}
+        E^{-1}E &= I\\
+        \begin{bmatrix}0&e&e&1\\e&-\frac{1}{3}&e&e\\e&e&e&e\\1&e&e&0\end{bmatrix} \begin{bmatrix}0&0&0&1\\0&-3&0&0\\0&-6&1&0\\1&0&0&0\end{bmatrix} &= \begin{bmatrix}1&0&0&0\\0&1&0&0\\0&0&1&0\\0&0&0&1\end{bmatrix}
+    \end{split}
+\end{equation*}
+The only row of $E^{-1}$ with no information about it is row 3.  And if we inspect the entry of the identity matrix at $2,3$, we can determine that $\begin{bmatrix}e^{-1}_{31}&e^{-1}_{31}& e^{-1}_{31}& e^{-1}_{31}\end{bmatrix}\begin{bmatrix}0\\-3\\-6\\0\end{bmatrix} = 0$, and a reasonable guess at the third row of the inverse would be $\{0,2,-1,0\}$ or $\{0,-2,1,0\}$.  However, when checked against the first operation, $\{0,-2,1,0\}$ is the only option that can yield the identity matrix's 1 value at $3,3$.\\
+
+\noindent If we now guess $E^{-1} = \begin{bmatrix}0&0&0&1\\0&-\frac{1}{3}&0&0\\0&-2&1&0\\1&0&0&0\end{bmatrix}$,\\ 
+we will find that the equations $EE^{-1} = I$ and $E^{-1}E = I$ are true.\\
+
+\noindent Therefore $E^{-1}=\begin{bmatrix}0&0&0&1\\0&-\frac{1}{3}&0&0\\0&-2&1&0\\1&0&0&0\end{bmatrix}$.
+\end{document}
