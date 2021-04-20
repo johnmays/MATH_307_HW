@@ -1,0 +1,46 @@
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+
+\title{\textbf{MATH 307: Individual Homework 20}}
+\author{John Mays}
+\date{04/21/21, Dr. Guo}
+
+\begin{document}
+
+\maketitle
+
+%\begin{bmatrix}\end{bmatrix}
+
+\section*{Problem 1}
+\begin{equation*}
+    A = \begin{bmatrix}3&2&1\\6&6&3\\3&0&-1\end{bmatrix}
+\end{equation*}
+\subsection*{Finding U: }
+Row 2: subtract 2 times row 1,\\
+Row 3: subtract row 1:
+\begin{equation*}
+    L_{2}A = \begin{bmatrix}1&0&0\\-2&1&0\\-1&0&1\end{bmatrix}\begin{bmatrix}3&2&1\\6&6&3\\3&0&-1\end{bmatrix} = \begin{bmatrix}3&2&1\\0&2&1\\0&-2&-2\end{bmatrix}
+\end{equation*}
+Row 3 in new matrix: add row 2
+\begin{equation*}
+    L_{1}(L_{2}A) =
+    \begin{bmatrix}1&0&0\\0&1&0\\0&1&1\end{bmatrix} \begin{bmatrix}3&2&1\\0&2&1\\0&-2&-2\end{bmatrix} = U = \begin{bmatrix}3&2&1\\0&2&1\\0&0&-1\end{bmatrix}
+\end{equation*}
+\subsection*{Finding L:}
+\begin{equation*}
+    \begin{split}
+    L_{1}L_{2}A &= U = L^{-1}A \implies\\ 
+    L^{-1} &= L_{1}L_{2} \implies\\
+    L &= (L_{1}L_{2})^{-1} = L_{2}^{-1}L_{1}^{-1} \\
+    L &= \begin{bmatrix}1&0&0\\2&1&0\\1&0&1\end{bmatrix}\begin{bmatrix}1&0&0\\0&1&0\\0&-1&1\end{bmatrix} = \begin{bmatrix}1&0&0\\2&1&0\\1&-1&1\end{bmatrix}
+    \end{split}
+\end{equation*}
+\subsection*{Conclusion:}
+\begin{equation*}
+    A = \begin{bmatrix}3&2&1\\6&6&3\\3&0&-1\end{bmatrix} = LU = \begin{bmatrix}1&0&0\\2&1&0\\1&-1&1\end{bmatrix}\begin{bmatrix}3&2&1\\0&2&1\\0&0&-1\end{bmatrix}
+\end{equation*}
+\end{document}
