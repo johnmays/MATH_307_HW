@@ -1,0 +1,90 @@
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+
+\title{\textbf{MATH 307: Individual Homework 21}}
+\author{John Mays}
+\date{04/28/21, Dr. Guo}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem 1}
+$L_1=I+l_1e_1^{T}$\\
+$L_1^{-1}=I-l_1 e_1^{T}$\\
+If this is true, then $L_1 L_1^{-1} = L_1^{-1} L_1  = I$
+\subsection*{Proof: }
+\subsubsection*{First Part: $L_1 L_1^{-1}$}
+\begin{equation*}
+    \begin{split}
+        L_1 L_1^{-1} &= (I+l_1e_1^{T})(I-l_1 e_1^{T})\\
+        &= II + l_1e_1^{T}I-l_1e_1^{T}I - l_1 e_1^{T}l_1 e_1^{T}\\
+        &= II - l_1 e_1^{T}l_1 e_1^{T}
+    \end{split}
+\end{equation*}
+Multiplying $l_1 e_1^{T}$ by $l_1 e_1^{T}$ yields a 0 matrix, because every nonzero entry in the first row of $l_1 e_1^{T}$ is multiplied by a $0$ in the calculation of the resultant matrix:
+\begin{equation*}
+        l_1 e_1^{T}l_1 e_1^{T} = \begin{bmatrix}0 & \dots & 0\\ -l_{12} & \dots & 0 \\ \vdots & \ddots & 0\\ -l_{1n} & \dots & 0 \end{bmatrix}\begin{bmatrix}0 & \dots & 0\\ -l_{12} & \dots & 0 \\ \vdots & \ddots & 0\\ -l_{1n} & \dots & 0 \end{bmatrix} = \begin{bmatrix}0 & \dots & 0\\\vdots & \ddots & \vdots\\0 & \dots & 0\\\end{bmatrix}
+\end{equation*}
+Therefore, 
+\begin{equation*}
+    \begin{split}
+        &= II - l_1 e_1^{T}l_1 e_1^{T}\\
+        &= II - 0\\
+        L_1 L_1^{-1} &= I
+    \end{split}
+\end{equation*}
+\subsubsection*{Second Part: $L_1^{-1} L_1 $}
+\begin{equation*}
+    \begin{split}
+        L_1^{-1} L_1 &= (I-l_1e_1^{T})(I+l_1 e_1^{T})\\
+        &= II - l_1e_1^{T}I+l_1e_1^{T}I - l_1 e_1^{T}l_1 e_1^{T}\\
+        &= II - l_1 e_1^{T}l_1 e_1^{T}
+    \end{split}
+\end{equation*}
+From the first part of the proof, we know that $II - l_1 e_1^{T}l_1 e_1^{T} = II - 0 = I$
+Therefore,
+\begin{equation*}
+        L_1^{-1} L_1 = I
+\end{equation*}
+\subsubsection*{Conclusion: }
+$L_1 L_1^{-1} = L_1^{-1} L_1  = I$, therefore $L^{-1} = I-l_1 e_1^{T} $ is the inverse of 
+$L_1=I+l_1e_1^{T}$.
+\section*{Problem 2}
+$A|b= \begin{pmatrix}-1&2&1&3&2\\-3&2&1&0&-5\\ -3&2&1&1&2\end{pmatrix}$\\
+\linebreak
+    \indent Subtract 3 times row 1 from row 2.\\
+    \indent Subtract 3 times row 1 from row 3.\\
+\linebreak
+$= \begin{pmatrix}-1&2&1&3&2\\0&-4&-2&-9&-11\\ 0&-4&-2&-8&-4\end{pmatrix}$\\
+\linebreak
+    \indent Subtract row 2 from row 3.\\
+\linebreak
+$U| \widetilde{b}= \begin{pmatrix}-1&2&1&3&2\\0&-4&-2&-9&-11\\ 0&0&0&1&7\end{pmatrix}$\\
+\subsubsection*{Finding a particular solution:}
+$x_4 = 7$.  Say $x_3 = 0 \rightarrow -4x_2-2(0)-9(7)=-11 \rightarrow x_2 = -13$.  $-x_1+2(-13)+1(0)+3(7)=2 \rightarrow x_1 = 7$.\\
+Therefore $x_p = \begin{pmatrix}7\\-13\\0\\7\end{pmatrix}$\\
+To find a vector in the null space of A, I will solve
+$\begin{pmatrix}-1&2&1&3&0\\0&-4&-2&-9&0\\ 0&0&0&1&0\end{pmatrix}$ for $x_3 = 1 \rightarrow x = \begin{pmatrix}0\\ -\frac{1}{2}\\1\\0\end{pmatrix}$\\
+\linebreak
+Therefore a general solution is $\begin{pmatrix}7\\-13\\0\\7\end{pmatrix} + \alpha \begin{pmatrix}0\\ -\frac{1}{2}\\1\\0\end{pmatrix}$
+\section*{Problem 3}
+\subsubsection*{a)}
+$A|b= \begin{pmatrix}-1&2&1&0&2&-1\\2&0&0&3&-1&0\\-1&6&3&3&5&c\end{pmatrix}$\\
+\linebreak
+\indent Add 2 times row 1 to row 2\\
+\indent Subtract row 1 from row 3\\
+\linebreak
+$= \begin{pmatrix}-1&2&1&0&2&-1\\0&4&2&3&3&-2\\0&4&2&3&3&c+1\end{pmatrix}$\\
+\linebreak
+$c$ must be $ = -3$.
+
+\subsubsection*{b)}
+Say $x_3=x_4=x_5=0$.  $\rightarrow 4x_2=-2 \rightarrow x_2 = -\frac{1}{2}$.  $\rightarrow -1x_1 +2(-\frac{1}{2})=-1 \rightarrow x_1 = 0$\\
+Therefore, $x_p = \begin{pmatrix}0\\-\frac{1}{2}\\0\\0\\0\end{pmatrix}$
+
+\end{document}
