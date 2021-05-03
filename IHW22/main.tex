@@ -1,0 +1,69 @@
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+
+\title{\textbf{MATH 307: Individual Homework 22}}
+\author{John Mays}
+\date{05/02/21, Dr. Guo}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem 1}
+\subsubsection*{$A$ is invertible $\implies$ All of its singular values are nonzero.}
+% $A$ is invertible $\implies$ $\det(A) \neq 0$.
+Assume $A$ is not invertible $\implies \det(A) = 0$, and that it also has all nonzero singular values.\\
+$$\det(A)=\det(U\Sigma V^{T})= \det(U)\det(\Sigma )\det(V^{T})=0$$
+Both $U$ and $V$ are orthogonal matrices, therefore their determinants are nonzero.  Therefore, $\det(\Sigma) = 0$.\\
+And since $\Sigma$ is a diagonal matrix, its determinant is the product of its diagonal entries.  Therefore $\det(0) \implies $ at least one $\sigma_i = 0 \rightarrow$ contradiction.\\
+\linebreak
+Therefore if $A$ is invertible, all of its singular values must be nonzero.
+\subsubsection*{All of $A$'s singular values are nonzero $\implies$ it is invertible.}
+If $A$ is invertible, then $A^{-1} = (U\Sigma V^{T}) = V \Sigma^{-1} U^{-1}$.\\
+Note: $\Sigma$ is a diagonal matrix with the singular values along the diagonal.  In order to take the inverse of $\Sigma$, it is simply the reciprocal of all of the diagonal entries.\\
+\linebreak
+Assume one of the singular values is zero $\implies$ one of $\Sigma$'s diagonal entries is zero.  Taking the inverse would require taking the reciprocal of zero, therefore the singular value decomposition would not exist $\rightarrow$ contradiction: every matrix has a singular value decomposition.\\
+\linebreak
+Therefore all of $A$'s singular values must be nonzero in order for it to be\\ invertible.
+\subsubsection*{Conclusion:}
+Therefore $A$ is invertible $\iff$ All of its singular values are nonzero.
+\pagebreak
+\section*{Problem 2}
+From properties of eigendecomposition, we know that if $A = Q \Lambda Q^{-1}$, then $-A = Q (-\Lambda)Q^{-1}$.  This implies that $-A$ will have the same eigenvalues as $A$, just negated.\\
+\linebreak
+\textbf{Characteristic Polynomial:}\\
+\linebreak
+$\det(\lambda I - (-A)) = (\lambda - (-\lambda_1))(\lambda - (-\lambda_2))\dots(\lambda - (-\lambda_n))$\\
+Say $\lambda = 0$.  Then: \\
+$\det(A) = (\lambda_1)(\lambda_2)\dots(\lambda_n)$\\
+Therefore the determinant of A is the product of its eigenvalues.
+\section*{Problem 3}
+\subsubsection*{Part 1:}
+If $A$ is invertible, $AA^{-1}=A^{-1}A=I$.\\
+If $A$ is invertible, all of its eigenvalues must be nonzero. \\
+%$Assume A is $
+$\det(AA^{-1})=\det(A^{-1}A)=\det(A^{-1})\det(A)=\det(I)=1$\\
+Note that $A^{-1}$ is also invertible by definition, therefore its eigenvalues must also be nonzero.\\
+$det(A)=\frac{1}{\det(A^{-1})}=\frac{1}{\lambda^{-1}_1\lambda^{-1}_2\dots \lambda^{-1}_n} \neq 0$\\
+\linebreak
+Therefore if $A$ is invertible, it's determinant must be nonzero.
+\subsubsection*{Part 2: }
+$\det(A) \neq 0 \implies \lambda_1\lambda_2\dots\lambda_n \neq 0 \implies $ all eigenvalues are nonzero.\\
+A matrix with all nonzero eigenvalues must be invertible.\\ 
+\linebreak
+Therefore if $\det(A) \neq 0,$ $A$ is invertible.
+\subsubsection*{Conclusion: }
+$\det(A) \neq 0 \iff A$ is invertible.
+
+%Assume $\det(A) = 0$ and $A$ is also invertible.\\
+%$\det(A)=\lambda_1\lambda_2\dots\lambda_n = 0 \implies \lambda_i = 0$ for some $1\leq i \leq n$. $\rightarrow$ contradiction: an invertible matrix must have eigenvalues
+
+
+
+
+
+\end{document}
