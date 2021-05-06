@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+
+\title{\textbf{MATH 307: Group Homework X}}
+\author{Zhitao Chen, John Mays, Huaijin Xin, Henry Zhong}
+\date{05/07/21, Dr. Guo}
+
+\begin{document}
+
+\maketitle
+
+%\begin{bmatrix}\end{bmatrix}
+
+\section*{Problem 1}
+\dots
+\pagebreak
+\section*{Problem 2}
+$$A = \begin{bmatrix}1&1\\1&0\\1&1\end{bmatrix}, b = \begin{bmatrix}3\\3\\3\end{bmatrix}$$
+$A^{T}$ would obviously be:
+$$\begin{bmatrix}1&1&1\\1&0&1\end{bmatrix}$$
+%Calculating $A^{-1}$
+%\begin{equation*}
+%    \begin{split}
+%        AA^{-1} &= I\\
+%        \begin{bmatrix}1&1\\1&0\\1&1\end{bmatrix}\begin{bmatrix}a^{-1T}_1\\a^{-1T}_2\end{bmatrix} &= \begin{bmatrix}1&0\\0&1\end{bmatrix}\\
+%        a^{-1T}_1 [1,1,1] &= 1\\
+%        a^{-1T}_1 [1,0,1] &= 0\\
+%        a^{-1T}_2 [1,1,1] &= 0\\
+%        a^{-1T}_2 [1,0,1] &= 1\\
+%        a^{-1T}_1 &= [0,1,0], \\
+%        a^{-1T}_2 &= [0,-1,0]\rightarrow\\ 
+%        A^{-1} &= \begin{bmatrix}0&1&0\\0&-1&1\end{bmatrix}\rightarrow\\
+%        AA^{-1} &= A^{-1}A = I \\
+%    \end{split}
+%\end{equation*}
+%Calculating $A^{-1T}$:
+%$$A^{-1T} = (A^{T})^{-1} = (A^{-1})^{T} = \begin{bmatrix}0&0\\1&-1\\0&1\end{bmatrix}$$
+Calculating $P:$
+\begin{equation*}
+    \begin{split}
+        P &= A(A^{T}A)^{-1}A^{T}= A(\begin{bmatrix}1&1&1\\1&0&1\end{bmatrix} \begin{bmatrix}1&1\\1&0\\1&1\end{bmatrix})^{-1}A^{T}\\
+        &= A (\begin{bmatrix}3&2\\2&2\end{bmatrix})^{-1}A^{T} = A (\frac{1}{2}\begin{bmatrix}2&-2\\-2&3\end{bmatrix}) A^{T} = \begin{bmatrix}1&1\\1&0\\1&1\end{bmatrix}\begin{bmatrix}1&-1\\-1&1.5\end{bmatrix} \begin{bmatrix}1&1&1\\1&0&1\end{bmatrix}\\
+        &= \begin{bmatrix}0&0.5\\1&-1\\0&0.5\end{bmatrix}\begin{bmatrix}1&1&1\\1&0&1\end{bmatrix} = P = \begin{bmatrix}0.5&0&0.5\\0&1&0\\0.5&0&0.5\end{bmatrix}
+    \end{split}
+\end{equation*}
+Calculating $Pb$:
+$$Pb = \begin{bmatrix}0.5&0&0.5\\0&1&0\\0.5&0&0.5\end{bmatrix} = \begin{bmatrix}3\\3\\3\end{bmatrix} = \begin{bmatrix}3\\3\\3\end{bmatrix} $$
+
+\pagebreak
+\section*{Problem 3}
+\dots
+\end{document}
